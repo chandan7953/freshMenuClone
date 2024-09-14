@@ -4,7 +4,7 @@ const FooterSection = () => {
   return (
     <footer className="bg-gray-100">
       <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-8">
           <div>
             <h3 className="font-semibold text-lg mb-4">COMPANY</h3>
             <ul className="space-y-2">
@@ -79,7 +79,7 @@ const FooterSection = () => {
             <h3 className="font-semibold text-lg mb-4">
               SUBSCRIBE TO OUR DROOLWORTHY NEWSLETTER
             </h3>
-            <div className="flex">
+            <div className="flex sm:items-center w-full max-w-md mx-auto ">
               <input
                 type="email"
                 placeholder="Enter your email"
