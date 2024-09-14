@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Navbar />
       <ImageSlider />
-      {/* <Categories /> */}
+      <Categories />
       <FooterSection />
     </div>
   );
