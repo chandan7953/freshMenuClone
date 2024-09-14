@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./components/ImageSlider";
 import Categories from "./components/Categories";
+import FooterSection from "./components/FooterSection";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Navbar />
       <ImageSlider />
       <Categories />
+      <FooterSection />
     </div>
   );
 };

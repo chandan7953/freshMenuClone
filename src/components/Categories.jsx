@@ -52,12 +52,12 @@ const Categories = () => {
           </details>
         </div>
       </div>
+
       <div className="flex flex-wrap flex-row">
         <div>
           <h1>Subscriptions</h1>
           <h1>Subscriptions</h1>
         </div>
-
         <CategoriesType />
       </div>
     </div>
