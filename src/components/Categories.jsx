@@ -155,7 +155,7 @@ const Categories = () => {
       <hr className="mt-2" />
 
       <div className="flex flex-wrap justigy-between ">
-        <div className="w-[20%] container mx-auto px-4 py-4">
+        <div className="w-[20%] hidden md:block container mx-auto px-4 py-4">
           {subCategoryList.map((ele) => (
             <div>
               <a href={"#" + ele.idName} className="text-lg font-semibold mb-2">
@@ -164,7 +164,7 @@ const Categories = () => {
             </div>
           ))}
         </div>
-        <div className="w-[80%]">
+        <div className=" w-full md:w-[80%]">
           {subCategoryList.map((ele) => (
             <CategoriesType idName={ele.idName} data={ele.payload} />
           ))}
