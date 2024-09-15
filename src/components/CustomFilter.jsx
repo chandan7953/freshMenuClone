@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FilterDropDown from "./FilterDropped";
 
 function CustomFilter() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,32 +48,9 @@ function CustomFilter() {
           />
         </svg>
       </button>
-
       {isOpen && (
         <div className="absolute top-full left-0 z-10 w-full mt-2 bg-white shadow-lg rounded-md overflow-hidden">
-          <div className="p-4">
-            <h3 className="text-gray-700 font-medium mb-2">Food Preference</h3>
-            <div className="space-y-2">
-              <button
-                // onClick={() => handleFilterClick('ALL')}
-                className="w-full px-3 py-2 text-left text-sm rounded-md hover:bg-gray-100 transition-colors duration-200"
-              >
-                All
-              </button>
-              <button
-                // onClick={() => handleFilterClick('VEGETARIAN')}
-                className="w-full px-3 py-2 text-left text-sm rounded-md bg-green-50 hover:bg-green-100 transition-colors duration-200"
-              >
-                Veg
-              </button>
-              <button
-                // onClick={() => handleFilterClick('NON-VEGETARIAN')}
-                className="w-full px-3 py-2 text-left text-sm rounded-md bg-red-50 hover:bg-red-100 transition-colors duration-200"
-              >
-                Non-Veg
-              </button>
-            </div>
-          </div>
+          <FilterDropDown />
         </div>
       )}
     </div>

@@ -4,7 +4,7 @@ import CustomFilter from "./CustomFilter";
 
 const Categories = () => {
   return (
-    <div className="mt-5 mb-5">
+    <div className="container mx-auto px-4 py-8">
       <div className="flex flex-wrap justify-around items-center">
         <div>
           <h1 className="text-lg font-bold">Categories</h1>
@@ -17,12 +17,14 @@ const Categories = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap flex-row">
-        <div>
+      <div className="flex flex-wrap justigy-between ">
+        <div className="w-[20%] container mx-auto px-4 py-8">
           <h1>Subscriptions</h1>
           <h1>Subscriptions</h1>
         </div>
-        <CategoriesType />
+        <div className="w-[80%]">
+          <CategoriesType />
+        </div>
       </div>
     </div>
   );
