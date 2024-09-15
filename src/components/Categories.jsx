@@ -119,22 +119,82 @@ const subCategoryList = [
   {
     idName: "Sub-Categories-1",
     payload: data,
+    name: "Subscriptions",
   },
   {
     idName: "Sub-Categories-2",
     payload: data,
+    name: "Bowls",
   },
   {
     idName: "Sub-Categories-3",
     payload: data,
+    name: "Superbowls",
   },
   {
     idName: "Sub-Categories-4",
     payload: data,
+    name: "Noodles",
   },
   {
     idName: "Sub-Categories-5",
     payload: data,
+    name: "All New Veg",
+  },
+  {
+    idName: "Sub-Categories-6",
+    payload: data,
+    name: "Keto and Salads",
+  },
+  {
+    idName: "Sub-Categories-7",
+    payload: data,
+    name: "Wraps",
+  },
+  {
+    idName: "Sub-Categories-8",
+    payload: data,
+    name: "Sandwiches",
+  },
+  {
+    idName: "Sub-Categories-9",
+    payload: data,
+    name: "Gourmet sandwiches",
+  },
+  {
+    idName: "Sub-Categories-10",
+    payload: data,
+    name: "Burgers",
+  },
+  {
+    idName: "Sub-Categories-11",
+    payload: data,
+    name: "Appetizers",
+  },
+  {
+    idName: "Sub-Categories-12",
+    payload: data,
+    name: "Desserts",
+  },
+  {
+    idName: "Sub-Categories-13",
+    payload: data,
+    name: "Zero Rice Bowl",
+  },
+  {
+    idName: "Sub-Categories-14",
+    payload: data,
+    name: "Menu Under 99",
+  },
+  {
+    idName: "Sub-Categories-15",
+    payload: data,
+    name: "Omelettes",
+  },
+  {
+    idName: "Sub-Categories-16",
+    payload: data,
+    name: "All day breakfast",
   },
 ];
 
@@ -157,16 +217,21 @@ const Categories = () => {
       <div className="flex flex-wrap justigy-between ">
         <div className="w-[20%] hidden md:block container mx-auto px-4 py-4">
           {subCategoryList.map((ele) => (
-            <div>
-              <a href={"#" + ele.idName} className="text-lg font-semibold mb-2">
-                {ele.idName}
+            <div className="pb-2">
+              <a href={"#" + ele.idName} className="text-lg font-semibold ">
+                {ele.name}
               </a>
             </div>
           ))}
         </div>
-        <div className=" w-full md:w-[80%]">
+        <div className=" w-full md:w-[80%] ">
           {subCategoryList.map((ele) => (
-            <CategoriesType idName={ele.idName} data={ele.payload} />
+            <CategoriesType
+              key={ele.idName}
+              idName={ele.idName}
+              data={ele.payload}
+              foodName={ele.name}
+            />
           ))}
         </div>
       </div>
