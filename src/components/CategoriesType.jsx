@@ -1,3 +1,6 @@
+import nonVegIcon from "../assets/nonVegIcon.svg";
+import vegIcon from "../assets/vegIcon.svg";
+
 export default function CategoriesType({ idName, data, foodName }) {
   return (
     <div className="container mx-auto px-4 py-4" id={idName}>
@@ -6,15 +9,13 @@ export default function CategoriesType({ idName, data, foodName }) {
         {data.map((item) => (
           <div key={item.id} className="bg-white  shadow-md overflow-hidden">
             <div className="relative">
-              <p
-                className={`text-xs font-semibold p-4  ${
-                  item.category === "VEGETARIAN"
-                    ? "text-green-500"
-                    : "text-red-500 "
-                }`}
-              >
-                {item.category}
-              </p>
+              <div className="flex gap-4 text-xs font-semibold p-4">
+                <img
+                  src={item.category === "VEGETARIAN" ? vegIcon : nonVegIcon}
+                  alt={item.category}
+                />
+                <p>Continental</p>
+              </div>
               <img
                 src={item.image}
                 alt={item.name}
@@ -24,20 +25,7 @@ export default function CategoriesType({ idName, data, foodName }) {
             <div className="p-4">
               <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
               <div className="flex items-center justify-between mb-2">
-                <div>
-                  <span className="text-2xl font-bold">₹{item.price}</span>
-                  <span className="text-sm text-gray-500 line-through ml-2">
-                    ₹{item.originalPrice}
-                  </span>
-                </div>
-                <span className="text-sm font-semibold text-green-600">
-                  {item.discount}% OFF
-                </span>
-              </div>
-              <div className="flex items-center justify-between">
-                {item.customisable && (
-                  <span className="text-xs text-gray-500">Customisable</span>
-                )}
+                <span className="text-2xl font-bold">₹{item.price}</span>
                 <button
                   className="bg-orange-500 text-white px-4 py-2 rounded-full flex items-center hover:bg-orange-600 transition-colors"
                   aria-label={`Add ${item.name} to cart`}
