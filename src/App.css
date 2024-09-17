@@ -1,0 +1,29 @@
+/* slidingBanner */
+.slidingBanner-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slidingBanner-slider {
+  display: flex;
+  animation: slide 60s linear infinite;
+  width: 300%;
+  object-fit: cover;
+}
+
+.slidingBanner-card {
+  flex-shrink: 0;
+  width: 40vw;
+  padding: 5px;
+  color: white;
+  object-fit: fill;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-33.33%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
