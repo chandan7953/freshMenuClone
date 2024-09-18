@@ -36,15 +36,15 @@ const Navbar = () => {
         </div>
 
         <div className="md:flex flex-wrap justify-end gap-8 items-center hidden pb-4 pr-8">
-          <div class="border-b-black flex h-10 items-center justify-start border-b-2 leading-4  sm:w-96">
+          <div className="border-b-black flex h-10 items-center justify-start border-b-2 leading-4  sm:w-96">
             <input
               type="text"
               placeholder="Search"
-              class="peer ml-2 flex-grow bg-transparent outline-none"
+              className="peer ml-2 flex-grow bg-transparent outline-none"
             />
             <button
               type="button"
-              class="peer-focus:mr-2 z-20 cursor-pointer text-black outline-none duration-150 hover:scale-125 mr-2"
+              className="peer-focus:mr-2 z-20 cursor-pointer text-black outline-none duration-150 hover:scale-125 mr-2"
             >
               <FiSearch />
             </button>
@@ -72,15 +72,15 @@ const Navbar = () => {
               <FiChevronDown className="h-4 w-4 ml-1" />
             </button>
           </div>
-          <div class="border-b-black flex h-10 items-center justify-start border-b-2 leading-4  sm:w-96 mb-4">
+          <div className="border-b-black flex h-10 items-center justify-start border-b-2 leading-4  sm:w-96 mb-4">
             <input
               type="text"
               placeholder="Search"
-              class="peer ml-2 flex-grow bg-transparent outline-none"
+              className="peer ml-2 flex-grow bg-transparent outline-none"
             />
             <button
               type="button"
-              class="peer-focus:mr-2 z-20 cursor-pointer text-black outline-none duration-150 hover:scale-125 mr-2"
+              className="peer-focus:mr-2 z-20 cursor-pointer text-black outline-none duration-150 hover:scale-125 mr-2"
             >
               <FiSearch />
             </button>

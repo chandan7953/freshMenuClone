@@ -217,7 +217,7 @@ const Categories = () => {
       <div className="flex flex-wrap justigy-between ">
         <div className="w-[20%] hidden md:block container mx-auto px-4 py-4">
           {subCategoryList.map((ele) => (
-            <div className="pb-2">
+            <div className="pb-2" key={ele.idName}>
               <a href={"#" + ele.idName} className="text-lg font-semibold ">
                 {ele.name}
               </a>
