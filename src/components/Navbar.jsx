@@ -8,14 +8,23 @@ import {
   FiX,
 } from "react-icons/fi";
 import logo from "../assets/logo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <nav className="bg-white shadow-md mb-2 sticky w-full top-0 left-0 z-50">
       <div>
         <div className="flex justify-between md:justify-start">
-          <img src={logo} alt="image is not " className="w-[150px] h-[55px]" />
+          <img
+            src={logo}
+            alt="image is not "
+            className="w-[150px] h-[55px]"
+            onClick={() => {
+              navigate("/");
+            }}
+          />
           <div className="hidden md:flex items-center space-x-2 text-sm">
             <span>Deliver to:</span>
             <button className="flex items-center font-medium text-orange-500">
@@ -58,7 +67,12 @@ const Navbar = () => {
           <button className="hover:text-orange-500">
             <FiUser className="h-5 w-5" />
           </button>
-          <button className="hover:text-orange-500">
+          <button
+            className="hover:text-orange-500"
+            onClick={() => {
+              navigate("/delivery");
+            }}
+          >
             <FiShoppingCart className="h-5 w-5" />
           </button>
         </div>
@@ -96,7 +110,12 @@ const Navbar = () => {
               <FiUser className="h-5 w-5" />
               <span>Account</span>
             </button>
-            <button className="flex items-center space-x-2 hover:text-orange-500">
+            <button
+              className="flex items-center space-x-2 hover:text-orange-500 "
+              onClick={() => {
+                navigate("/delivery");
+              }}
+            >
               <FiShoppingCart className="h-5 w-5" />
               <span>Cart</span>
             </button>
