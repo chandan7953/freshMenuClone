@@ -8,19 +8,9 @@ import masterCardIcon from "../assets/masterCardIcon.svg";
 import paypalIcon from "../assets/paypalIcon.svg";
 import visaIcon from "../assets/visaIcon.svg";
 import LoginInterface from "../components/Login";
+import DeliveryIteam from "../components/DeliveryIteam";
 
 export default function Component() {
-  const [vegQuantity, setVegQuantity] = useState(1);
-  const [nonVegQuantity, setNonVegQuantity] = useState(1);
-  const [contactLessDelivery, setContactLessDelivery] = useState(false);
-
-  const calculateTotal = () => {
-    const itemTotal = (vegQuantity + nonVegQuantity) * 500;
-    const packagingFee = 13;
-    const gst = itemTotal * 0.05;
-    return (itemTotal + packagingFee + gst).toFixed(2);
-  };
-
   return (
     <main className="container mx-auto p-4 grid md:grid-cols-2 gap-4 mb-8">
       <div className="space-y-4">
@@ -91,107 +81,7 @@ export default function Component() {
             </button>
           </div>
         </div>
-        <div className="bg-white shadow rounded-lg mt-4">
-          <div className="px-4 py-5 sm:p-6">
-            <div className="flex justify-between items-center mb-4">
-              <div>
-                <p>Super Veg Snack Pack</p>
-                <p className="text-muted-foreground">₹ 500.00</p>
-              </div>
-              <div className="flex items-center space-x-2 border border-black px-2 rounded-3xl">
-                <button
-                  className="p-2 text-orange-500  focus:text-orange-600"
-                  onClick={() => setVegQuantity(Math.max(1, vegQuantity - 1))}
-                  aria-label="Decrease vegetarian quantity"
-                >
-                  <FaMinus className="h-4 w-4" />
-                </button>
-                <span aria-live="polite" aria-atomic="true">
-                  {vegQuantity}
-                </span>
-                <button
-                  className="p-2 text-orange-500  focus:text-orange-600"
-                  onClick={() => setVegQuantity(vegQuantity + 1)}
-                  aria-label="Increase vegetarian quantity"
-                >
-                  <FaPlus className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-            <div className="flex justify-between items-center mb-4">
-              <div>
-                <p>Classic Non Veg Snack Pack</p>
-                <p className="text-muted-foreground">₹ 500.00</p>
-              </div>
-              <div className="flex items-center space-x-2 border border-black px-2 rounded-3xl">
-                <button
-                  className="p-2 text-orange-500  focus:text-orange-600"
-                  onClick={() =>
-                    setNonVegQuantity(Math.max(1, nonVegQuantity - 1))
-                  }
-                  aria-label="Decrease non-vegetarian quantity"
-                >
-                  <FaMinus className="h-4 w-4" />
-                </button>
-                <span aria-live="polite" aria-atomic="true">
-                  {nonVegQuantity}
-                </span>
-                <button
-                  className="p-2 text-orange-500  focus:text-orange-600"
-                  onClick={() => setNonVegQuantity(nonVegQuantity + 1)}
-                  aria-label="Increase non-vegetarian quantity"
-                >
-                  <FaPlus className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-            <div className="bg-green-100 px-4 py-2 rounded-md text-green-800 text-sm mb-4 border border-green-800 ">
-              Safety Assured meals and contactless delivery
-            </div>
-
-            <button className="w-full px-4 py-2 border border-gray-300 text-gray-700 font-medium rounded-md hover:bg-gray-50  flex justify-between items-center mb-4">
-              Check available coupons
-              <FaChevronRight className="h-4 w-4" />
-            </button>
-            <div className="flex items-start space-x-2 mb-4">
-              <input
-                type="checkbox"
-                id="contact-less"
-                className="form-checkbox h-5 w-5 text-blue-600"
-                checked={contactLessDelivery}
-                onChange={(e) => setContactLessDelivery(e.target.checked)}
-              />
-              <label htmlFor="contact-less" className="text-sm">
-                Opt for Contact Less Delivery <br />
-                <span className="text-xs text-muted-foreground mb-4">
-                  Rider would leave your food parcel at a distance/ drop off at
-                  security gate.
-                </span>
-              </label>
-            </div>
-
-            <div className="space-y-2  pt-2">
-              <div className="flex justify-between">
-                <span>Item Price</span>
-                <span>₹ {(vegQuantity + nonVegQuantity) * 500}.00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Packaging Fee</span>
-                <span>+ ₹ 13.00</span>
-              </div>
-              <div className="flex justify-between">
-                <span>GST (5%)</span>
-                <span>
-                  + ₹ {((vegQuantity + nonVegQuantity) * 500 * 0.05).toFixed(2)}
-                </span>
-              </div>
-              <div className="flex justify-between font-bold border-t border-black pt-2">
-                <span>Payable</span>
-                <span aria-live="polite">₹ {calculateTotal()}</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <DeliveryIteam />
       </div>
     </main>
   );
